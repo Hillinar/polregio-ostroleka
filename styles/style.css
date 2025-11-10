@@ -1,14 +1,15 @@
 /* Strana Główna */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #a3a2a5; /* Körperfarbe geändert */
-  color: #333333; /* 6-stelliger Hex-Code */
+  background-color: #a3a2a5;
+  color: black;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background: linear-gradient(90deg, #ff4d00, #ff8800); /* Beide Farben bleiben unverändert */
+<!--background: linear-gradient(90deg, #ff4d00, #ff8800);-->
+  background-color: #c4281c;
   color: white;
   text-align: center;
   padding: 20px 10px;
@@ -20,24 +21,24 @@ img.logo {
 }
 
 nav {
-  background-color: #f2f2f2; /* 6-stelliger Hex-Code */
+  background-color: #f2f2f2;
   text-align: center;
   padding: 10px 0;
 }
 
 nav a {
-  color: #ff4d00; /* 6-stelliger Hex-Code */
+  color: #ff4d00;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
 }
 
 nav a:hover {
-  color: #cc0000; /* 6-stelliger Hex-Code */
+  color: #cc0000;
 }
 
 .hero {
-  background-color: #fff5f0; /* 6-stelliger Hex-Code */
+  background-color: #fff5f0;
   text-align: center;
   padding: 40px 20px;
 }
@@ -49,16 +50,16 @@ nav a:hover {
 }
 
 footer {
-  background-color: #c4281c; /* Footerfarbe geändert */
+  background-color: #c4281c;
   text-align: center;
   padding: 10px;
   font-size: 0.9em;
-  color: #555555; /* 6-stelliger Hex-Code */
+  color: black;
 }
 
 /* Usługi */
 nav a.active {
-    color: #ff8800; /* 6-stelliger Hex-Code */
+    color: #ff8800;
 }
 
 main {
@@ -66,33 +67,33 @@ main {
 }
 
 .services-intro h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 2em; /* Heading size for services intro */
+    margin-bottom: 10px; /* Margin below heading */
 }
 
 .services-intro p {
-    font-size: 1.1em;
-    line-height: 1.5em;
+    font-size: 1.1em; /* Font size for paragraph in services intro */
+    line-height: 1.5em; /* Line height for better readability */
 }
 
 .service-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
+    display: flex; /* Flexbox for services cards layout */
+    flex-wrap: wrap; /* Allow wrapping of cards */
+    gap: 20px; /* Space between cards */
+    margin-top: 20px; /* Margin above service cards section */
 }
 
 .service-card {
-    flex: 1 1 250px;
-    padding: 20px;
-    border: 1px solid #dddddd; /* 6-stelliger Hex-Code */
-    border-radius: 10px;
-    background-color: #f0f0f0; /* 6-stelliger Hex-Code */
+    flex: 1 1 250px; /* Flex settings for service cards */
+    padding: 20px; /* Padding inside service card */
+    border: 1px solid #dddddd; /* Border for service card */
+    border-radius: 10px; /* Rounded corners for service card */
+    background-color: #f0f0f0; /* Background color for service card */
 }
 
 .service-card h2 {
-    margin-top: 0;
-    color: #ff8800; /* 6-stelliger Hex-Code */
+    margin-top: 0; /* No margin on top of service card heading */
+    color: #ff8800; /* Highlight color for service card heading */
 }
 
 /*kontakt*/
@@ -102,32 +103,32 @@ main {
 }
 
 .contact-info li {
-  margin-bottom: 5px;
+  margin-bottom: 5px; /* Margin below each contact info item */
 }
 
 .contact-form form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
+  display: flex; /* Flexbox for contact form layout */
+  flex-direction: column; /* Vertical layout */
+  max-width: 400px; /* Maximum width for contact form */
 }
 
 .contact-form label {
-  margin-top: 10px;
+  margin-top: 10px; /* Margin above labels */
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #cccccc; /* 6-stelliger Hex-Code */
-  border-radius: 4px;
+  padding: 8px; /* Padding for input and textarea */
+  margin-top: 5px; /* Margin above inputs */
+  border: 1px solid #cccccc; /* Border color for inputs */
+  border-radius: 4px; /* Rounded corners for inputs */
 }
 
 .contact-form button {
-  margin-top: 15px;
-  padding: 10px;
-  border: none;
-  background-color: #ffcc00; /* 6-stelliger Hex-Code */
-  font-weight: bold;
-  cursor: pointer;
+  margin-top: 15px; /* Margin above button */
+  padding: 10px; /* Padding for button */
+  border: none; /* No border for button */
+  background-color: #ffcc00; /* Button background color */
+  font-weight: bold; /* Bold text on button */
+  cursor: pointer; /* Pointer cursor for button */
 }
