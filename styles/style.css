@@ -27,18 +27,18 @@ nav {
 }
 
 nav a {
-  color: #ff4d00;
+  color: white;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
 }
 
 nav a:hover {
-  color: #cc0000;
+  color: grey;
 }
 
 .hero {
-  background-color: #fff5f0;
+  background-color: #a3a2a5;
   text-align: center;
   padding: 40px 20px;
 }
