@@ -9,7 +9,7 @@ body {
 
 header {
 <!--background: linear-gradient(90deg, #ff4d00, #ff8800);-->
-  background-color: #c4281c;
+  background-color: #a3a2a5;
   color: white;
   text-align: center;
   padding: 20px 10px;
@@ -21,7 +21,7 @@ img.logo {
 }
 
 nav {
-  background-color: #f2f2f2;
+  background-color: #c4281c;
   text-align: center;
   padding: 10px 0;
 }
