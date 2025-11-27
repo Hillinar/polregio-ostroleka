@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PolRegio Ostrołęka – Usługi</title>
+<link rel="icon" href="images/polregio-favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<header>
+  <img src="images/logo.jpg" alt="PolRegio" class="logo">
+  <nav>
+    <a href="index.html">Strona główna</a>
+    <a href="usługi.html" class="active">Usługi</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="../en/services.html">&#x1F1EA;&#x1F1FA;</a>
+  </nav>
+</header>
+
+<main>
+  <section class="services-intro">
+    <h1>Nasze usługi</h1>
+    <p>Oferujemy kompleksową obsługę transportu autobusowego i specjalnego w regionie Ostrołęka.</p>
+  </section>
+  <section class="service-cards">
+    <div class="service-card">
+      <h2>Autobusy zastępcze</h2>
+      <p>Zapewniamy transport zastępczy w przypadku awarii lub prac na torach.</p>
+    </div>
+    <div class="service-card">
+      <h2>Transport specjalny</h2>
+      <p>Organizujemy przewozy specjalne dla wydarzeń, szkół i grup prywatnych.</p>
+    </div>
+    <div class="service-card">
+      <h2>Informacje i wsparcie</h2>
+      <p>Aktualne rozkłady jazdy, kontakt z obsługą klienta oraz możliwość rezerwacji.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><b>&copy;&nbsp;2025,&nbsp;PolRegio&nbsp;Ostrołęka</b></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PolRegio Ostrołęka – Kontakt</title>
+<link rel="icon" href="images/polregio-favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<header>
+  <img src="images/logo.jpg" alt="PolRegio" class="logo">
+  <nav>
+    <a href="index.html">Strona główna</a>
+    <a href="usługi.html">Usługi</a>
+    <a href="kontakt.html" class="active">Kontakt</a>
+    <a href="../en/contact.html">&#x1F1EA;&#x1F1FA;</a>
+  </nav>
+</header>
+
+<main>
+  <section class="contact-info">
+    <h1>Kontakt</h1>
+    <p>Masz pytania? Skontaktuj się z nami!</p>
+    <ul>
+      <li>Email: <a href="mailto:hillinar.roblox@gmail.com">Hillinar.Roblox@gmail.com</a></li>
+      <li>Adres: ul. Warszawska 1, 07-400 Ostrołęka, Polska<br>
+      <strong>(To nie jest prawdziwy adres! To adres z gry.)</strong></li>
+    </ul>
+  </section>
+  <section class="contact-form">
+    <h2>Wyślij wiadomość</h2>
+    <form action="#" method="post">
+      <label for="name">Imię i nazwisko:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Wiadomość:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <button type="submit">Wyślij</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p><b>&copy;&nbsp;2025,&nbsp;PolRegio&nbsp;Ostrołęka</b></p>
+</footer>
+
+</body>
+</html>

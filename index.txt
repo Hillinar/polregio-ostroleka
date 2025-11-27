@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PolRegio Ostrołęka – Transport Zastępczy i Specjalny</title>
+<link rel="icon" href="images/polregio-favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<header>
+  <img src="images/logo.jpg" alt="PolRegio" class="logo">
+  <h1>PolRegio Ostrołęka</h1>
+  <p>Transport Zastępczy i Specjalny</p>
+  <nav>
+    <a href="index.html">Strona Główna</a>
+    <a href="usługi.html">Usługi</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="../en/index.html">&#x1F1EA;&#x1F1FA;</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Nowa jakość w transporcie zastępczym!</h2>
+    <p>PolRegio Ostrołęka zapewnia sprawny i komfortowy transport zastępczy oraz specjalny w południowo-zachodniej Polsce.</p>
+  </section>
+  <section class="about">
+    <h2>O nas</h2>
+    <p>Jesteśmy częścią PolRegio, skupioną na organizacji i obsłudze autobusów zastępczych oraz przewozów specjalnych.&nbsp;Naszym priorytetem jest <b>niezawodność</b>, <b>punktualność</b> i <b>bezpieczeństwo pasażerów</b>.</p>
+  </section>
+</main>
+
+<footer>
+  <p><b>&copy;&nbsp;2025,&nbsp;PolRegio&nbsp;Ostrołęka</b><span class="superscript">&reg;</span>&nbsp;| Projekt fikcyjny</p>
+</footer>
+
+</body>
+</html>
