@@ -1,7 +1,7 @@
 /* Strana Główna */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #a3a2a5;
+  background-color: #f2f3f3;
   color: black;
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ body {
 
 header {
 <!--background: linear-gradient(90deg, #ff4d00, #ff8800);-->
-  background-color: #a3a2a5;
+  background-color: #f2f3f3;
   color: white;
   text-align: center;
   padding: 20px 10px;
@@ -21,7 +21,7 @@ img.logo {
 }
 
 nav {
-  background-color: #c4281c;
+  background-color: #ffb000;
   text-align: center;
   padding: 10px 0;
 }
@@ -38,7 +38,7 @@ nav a:hover {
 }
 
 .hero {
-  background-color: #a3a2a5;
+  background-color: #f2f3f3;
   text-align: center;
   padding: 40px 20px;
 }
@@ -50,7 +50,7 @@ nav a:hover {
 }
 
 footer {
-  background-color: #c4281c;
+  background-color: #ff0000;
   text-align: center;
   padding: 10px;
   font-size: 0.9em;
