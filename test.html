@@ -17,13 +17,12 @@
         }
         body {
             background-color: #000000;
+        }
         table {
-            width: 365px;
+            width: 350px;
             border: 0;
             border-color: #222222;
             margin-top: 10px;
-            margin-right: 10px;
-            margin-bottom: 10px;
             margin-left: 10px;
         }
         tbody {
@@ -38,6 +37,10 @@
             font-family: 'Arial';
             font-size: small;
             text-align: left;
+        }
+        footer {
+            position: static; /* oder position: relative; */
+            width: 100%;
         }
 </style>
 </head>
@@ -256,8 +259,7 @@
     </tr>
 </table>
 
-<table align="left" border="0" border-color="#222222" cellpadding="1" cellspacing="0" width="25%" style="margin-right: 10px; margin-bottom: 10px;"
- id="kamionkapkp">
+<table align="left" cellpadding="1" cellspacing="0" id="kamionkapkp">
     <thead>
 	<tr>
 	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">K&nbsp;A&nbsp;M&nbsp;I&nbsp;O&nbsp;N&nbsp;K&nbsp;A&nbsp;&nbsp;&nbsp;P&nbsp;K&nbsp;P</font></b></center></td>
@@ -347,7 +349,7 @@ const schedulesLines = [
     "Line":"272",
     "Destination":"Olkusz Dworzec PKP",
     "Stations":["Dworzec Główny","Al. Pokoju","Złocień PKP","Łagiewniki PKP","Piekarska","Olkusz Dworzec PKP"],
-    "Platforms":["11","02","01","02","01",""],
+    "Platforms":["09","02","01","02","01",""],
     "Times":["00:15","01:15","02:15","03:15","04:15","05:15","06:15","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","22:15","23:15"],
     "Stationtime":["0","60","120","240","420","600"],
   },
@@ -355,7 +357,7 @@ const schedulesLines = [
     "Line":"272",
     "Destination":"Dworzec Główny",
     "Stations":["Olkusz Dworzec PKP","Piekarska","Łagiewniki PKP","Złocień PKP","Al. Pokoju","Dworzec Główny"],
-    "Platforms":["01","02","01","02","03","11"],
+    "Platforms":["01","02","01","02","03","09"],
     "Times":["00:45","01:45","02:45","03:45","04:45","05:45","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:45","22:45","23:45"],
     "Stationtime":["0","180","360","480","540","600"],
   },
@@ -363,7 +365,7 @@ const schedulesLines = [
     "Line":"372",
     "Destination":"Dąbrowa Górnicza Strzemieszyce",
     "Stations":["Olkusz Dworzec PKP","Dworzec Główny","Rynek Główny","Dąbrowa Górnicza Strzemieszyce"],
-    "Platforms":["01","11","",""],
+    "Platforms":["01","10","02",""],
     "Times":["00:15","01:15","02:15","03:15","04:15","05:15","06:15","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","22:15","23:15"],
     "Stationtime":["0","600","720","840"],
   },
@@ -371,7 +373,7 @@ const schedulesLines = [
     "Line":"372",
     "Destination":"Olkusz Dworzec PKP",
     "Stations":["Dąbrowa Górnicza Strzemieszyce","Rynek Główny","Dworzec Główny","Olkusz Dworzec PKP"],
-    "Platforms":["","","05",""],
+    "Platforms":["","03","05",""],
     "Times":["00:45","01:45","02:45","03:45","04:45","05:45","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:45","22:45","23:45"],
     "Stationtime":["0","120","300","840"],
   }
@@ -544,7 +546,11 @@ const tableBody = document.querySelector(`#${CSS.escape(tableId)} tbody`);
     const mins = minutesUntil(departureTime);
     const displayTime = mins >= 0 && mins < 60 ? `&nbsp;&nbsp;&nbsp;${mins}\'&nbsp;` : formatTime(departureTime);
     // Keep same column order but added platform column (adjust as you like)
-    row.innerHTML = `<td>${line}</td><td>${destination}</td><td>${platform || ''}</td><td>${displayTime}</td>`;
+    // place this directly before the existing row.innerHTML = ... line
+    const displayDestination = (['271','272','372'].includes(line))
+      ? `ZKA&nbsp;${destination === 'Dąbrowa Górnicza Strzemieszyce' ? 'Dąbrowa Górnicza Strz.' : destination}`
+      : destination;
+    row.innerHTML = `<td>${line}</td><td>${displayDestination}</td><td>${platform || ''}</td><td>${displayTime}</td>`;
     tableBody.appendChild(row);
   });
 };
