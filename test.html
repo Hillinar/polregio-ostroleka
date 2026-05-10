@@ -118,10 +118,50 @@
     </tr>
 </table>
 
+<table align="left" cellpadding="1" cellspacing="0" id="ostrołekalotnisko">
+    <thead>
+	<tr>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">L&nbsp;O&nbsp;T&nbsp;N&nbsp;I&nbsp;S&nbsp;K&nbsp;O</font></b></center></td>
+        </tr>
+        <tr bgcolor="#222222">
+            <th>Linia</th>
+            <th>Kierunek</th>
+            <th>Peron</th>
+            <th>Odjazd</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tr bgcolor="#223311">
+        <td colspan="4"><b><font color="#BBDD00" face="Pixellari"><marquee direction="left" scrollamount="8"> + + +&nbsp;&nbsp;Wyświetlacz w trybie testowym.&nbsp;&nbsp;+ + + </marquee></font></b></td>
+    <!--<td colspan="1"><font color="DDBB00" face="OohBahn"><></font></td>-->
+    </tr>
+</table>
+
 <table align="left" cellpadding="1" cellspacing="0" id="rzedzin">
     <thead>
 	<tr>
 	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">R&nbsp;Z&nbsp;Ę&nbsp;D&nbsp;Z&nbsp;I&nbsp;N</font></b></center></td>
+        </tr>
+        <tr bgcolor="#222222">
+            <th>Linia</th>
+            <th>Kierunek</th>
+            <th>Peron</th>
+            <th>Odjazd</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tr bgcolor="#223311">
+        <td colspan="4"><b><font color="#BBDD00" face="Pixellari"><marquee direction="left" scrollamount="8"> + + +&nbsp;&nbsp;Wyświetlacz w trybie testowym.&nbsp;&nbsp;+ + + </marquee></font></b></td>
+    <!--<td colspan="1"><font color="DDBB00" face="OohBahn"><></font></td>-->
+    </tr>
+</table>
+
+<table align="left" cellpadding="1" cellspacing="0" id="slaska">
+    <thead>
+	<tr>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">Ś&nbsp;L&nbsp;Ą&nbsp;S&nbsp;K&nbsp;A</font></b></center></td>
         </tr>
         <tr bgcolor="#222222">
             <th>Linia</th>
@@ -266,76 +306,76 @@
 <script>
 const schedulesLines = [
   {
+    "Line":"252",
+    "Destination":"Ostrołęka Lotnisko",
+    "Stations":["Dworzec Główny","Al. Jana Pawła II","Łódzka","Śląska","Ostrołęka Lotnisko"],
+    "Platforms":["10","01","02","02","02"],
+    "Time":"00:00",
+    "Stationtime":["0","60","120","180","240"],
+    "Interv":"30",
+    "Rushhourinterv":"30",
+    "Latenightinterv":"30",
+    "Nightinterv":"30",
+  },
+  {
+    "Line":"252",
+    "Destination":"Dworzec Główny",
+    "Stations":["Ostrołęka Lotnisko","Śląska","Łódzka","Al. Jana Pawła II","Dworzec Główny","Dworzec Główny"],
+    "Platforms":["02","05","01","02","04","10"],
+    "Time":"00:15",
+    "Stationtime":["0","60","120","180","240","300"],
+    "Interv":"30",
+    "Rushhourinterv":"30",
+    "Latenightinterv":"30",
+    "Nightinterv":"30",
+  },
+  {
     "Line":"271",
     "Destination":"Kamionka PKP",
     "Stations":["Biskupice Podgórne PKP","Lwówek Śląski","Radłow","Msczconów PKP","Mrożka","Warszawska","Blachownia PKP","Kochłowice","Rzędzin","Śląska","Kamionka PKP"],
     "Platforms":["01","01","03","02","05","02","01","11","02","","02"],
-    "Time":"00:15",
+    "Times":["00:15","01:00","01:45","02:30","03:15","04:00","04:45","05:30","06:15","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","22:00","22:45","23:30"],
     "Stationtime":["0","180","240","360","420","480","540","720","900","960","1080"],
-    "Interv":"30",
-    "Rushhourinterv":"30",
-    "Latenightinterv":"45",
-    "Nightinterv":"45"
   },
   {
     "Line":"271",
     "Destination":"Biskupice Podgórne PKP",
     "Stations":["Kamionka PKP","Śląska","Rzędzin","Kochłowice","Blachownia PKP","Warszawska","Mrożka","Msczconów PKP","Radłow","Lwówek Śląski","Biskupice Podgórne PKP"],
     "Platforms":["01","01","","11","04","01","03","01","04","01","01"],
-    "Time":"00:37",
+    "Times":["00:37","01:22","02:07","02:52","03:37","04:22","05:07","05:52","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","21:37","22:22","23:07","23:52"],
     "Stationtime":["0","120","180","300","480","540","600","660","840","900","1080"],
-    "Interv":"30",
-    "Rushhourinterv":"30",
-    "Latenightinterv":"45",
-    "Nightinterv":"45"
   },
   {
     "Line":"272",
     "Destination":"Olkusz Dworzec PKP",
     "Stations":["Dworzec Główny","Al. Pokoju","Złocień PKP","Łagiewniki PKP","Piekarska","Olkusz Dworzec PKP"],
     "Platforms":["11","02","01","02","01",""],
-    "Time":"00:15",
+    "Times":["00:15","01:15","02:15","03:15","04:15","05:15","06:15","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","22:15","23:15"],
     "Stationtime":["0","60","120","240","420","600"],
-    "Interv":"30",
-    "Rushhourinterv":"30",
-    "Latenightinterv":"60",
-    "Nightinterv":"60"
   },
   {
     "Line":"272",
     "Destination":"Dworzec Główny",
     "Stations":["Olkusz Dworzec PKP","Piekarska","Łagiewniki PKP","Złocień PKP","Al. Pokoju","Dworzec Główny"],
     "Platforms":["01","02","01","02","03","11"],
-    "Time":"00:45",
+    "Times":["00:45","01:45","02:45","03:45","04:45","05:45","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:45","22:45","23:45"],
     "Stationtime":["0","180","360","480","540","600"],
-    "Interv":"30",
-    "Rushhourinterv":"30",
-    "Latenightinterv":"60",
-    "Nightinterv":"60"
   },
   {
     "Line":"372",
     "Destination":"Dąbrowa Górnicza Strzemieszyce",
     "Stations":["Olkusz Dworzec PKP","Dworzec Główny","Rynek Główny","Dąbrowa Górnicza Strzemieszyce"],
     "Platforms":["01","11","",""],
-    "Time":"00:15",
+    "Times":["00:15","01:15","02:15","03:15","04:15","05:15","06:15","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","22:15","23:15"],
     "Stationtime":["0","600","720","840"],
-    "Interv":"30",
-    "Rushhourinterv":"30",
-    "Latenightinterv":"60",
-    "Nightinterv":"60"
   },
   {
     "Line":"372",
     "Destination":"Olkusz Dworzec PKP",
     "Stations":["Dąbrowa Górnicza Strzemieszyce","Rynek Główny","Dworzec Główny","Olkusz Dworzec PKP"],
     "Platforms":["","","05",""],
-    "Time":"00:45",
+    "Times":["00:45","01:45","02:45","03:45","04:45","05:45","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:45","22:45","23:45"],
     "Stationtime":["0","120","300","840"],
-    "Interv":"30",
-    "Rushhourinterv":"30",
-    "Latenightinterv":"60",
-    "Nightinterv":"60"
   }
 ];
 
@@ -513,7 +553,7 @@ const tableBody = document.querySelector(`#${CSS.escape(tableId)} tbody`);
 
 /* Convenience wrapper to refresh multiple known table IDs */
 const refreshTablesFromLines = (lines) => {
-  const tableIds = ['biskupicepodgornepkp','dabrowagorniczastrzemieszyce','dworzecgłowny','kamionkapkp','kochłowice','lwowekslaski','olkuszdworzecpkp','rynekgłowny','rzedzin','warszawska'];
+  const tableIds = ['biskupicepodgornepkp','dabrowagorniczastrzemieszyce','dworzecgłowny','kamionkapkp','kochłowice','lwowekslaski','olkuszdworzecpkp','ostrołekalotnisko','rynekgłowny','rzedzin','slaska','warszawska'];
   tableIds.forEach(id => updateTableFromLines(id, lines));
 };
 
