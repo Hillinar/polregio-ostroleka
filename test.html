@@ -339,12 +339,19 @@ const schedulesLines = [
   }
 ];
 
-/* Utility: parse "HH:MM" into a Date for a given reference day */
+/* Interpret provided "HH:MM" as Europe/Warsaw local time (MEZ/MESZ) and return a Date in the user's local timezone */
 const makeDateFromTime = (timeStr, referenceDate = new Date()) => {
   const [h, m] = timeStr.split(':').map(Number);
-  const d = new Date(referenceDate);
-  d.setHours(h, m, 0, 0);
-  return d;
+  // build a wall-clock Date for the reference day with the given hour/minute,
+  // then convert that Warsaw wall time into a local Date by using toLocaleString with timeZone.
+  const year = referenceDate.getFullYear();
+  const month = referenceDate.getMonth(); // 0-based
+  const day = referenceDate.getDate();
+  const warsawWall = new Date(year, month, day, h, m, 0);
+  // toLocaleString(..., { timeZone: 'Europe/Warsaw' }) returns a string representing warsawWall in Warsaw time,
+  // creating a Date from that string yields a Date object in the local timezone that represents the same absolute instant.
+  const warsawLocalString = warsawWall.toLocaleString('en-US', { timeZone: 'Europe/Warsaw' });
+  return new Date(warsawLocalString);
 };
 
 /* Determine which interval (minutes) applies at a given Date for a line object */
@@ -360,40 +367,54 @@ const getIntervalMinutes = (dt, lineObj) => {
   return Number(lineObj.Nightinterv); // 0..5
 };
 
-/* Generate departures for a single line and a single station index within a time window (now..now+24h) */
-/* Returns array of Date objects for departure times at that station (local times) */
+/* Generate departures for a single line and a single station index within a time window (now..now+24h)
+   Returns array of Date objects for departure times at that station (local times)
+   Supports two modes:
+     - explicit schedule mode: lineObj.Times = ["00:45","01:45",...]
+     - interval mode (existing): lineObj.Time + variable intervals
+*/
 const generateDeparturesForStation = (lineObj, stationIndex, horizonHours = 24) => {
   const now = new Date();
   const horizon = new Date(now.getTime() + horizonHours * 60 * 60 * 1000);
+  const offsetSeconds = Number(lineObj.Stationtime?.[stationIndex] || 0);
+  const departures = [];
 
-  // Base first departure at the first station time "Time". We'll compute corresponding time for this station.
-  // Stationtime gives seconds offset from first station.
-  const offsetSeconds = Number(lineObj.Stationtime[stationIndex] || 0);
+  // ---- Explicit times mode: use lineObj.Times (array of "HH:MM") if present ----
+  if (Array.isArray(lineObj.Times) && lineObj.Times.length > 0) {
+    // Consider each provided time on yesterday, today and tomorrow to cover edge cases
+    const days = [-1, 0, 1]; // yesterday, today, tomorrow
+    days.forEach(dayOffset => {
+      const ref = new Date();
+      ref.setDate(ref.getDate() + dayOffset);
+      ref.setHours(0,0,0,0);
+      lineObj.Times.forEach(timestr => {
+        const base = makeDateFromTime(timestr, ref);            // time at first station
+        const atThisStation = new Date(base.getTime() + offsetSeconds * 1000);
+        if (atThisStation >= now && atThisStation <= horizon) departures.push(atThisStation);
+      });
+    });
 
-  // We need to consider initial base departures that could be before today/time -> generate across previous day to cover cases.
-  // Strategy: start from yesterday at base Time, then iterate adding variable intervals until beyond horizon.
+    // Sort and deduplicate (in case of overlap)
+    departures.sort((a,b) => a - b);
+    for (let i = departures.length - 1; i > 0; i--) {
+      if (departures[i].getTime() === departures[i-1].getTime()) departures.splice(i,1);
+    }
+    return departures;
+  }
+
+  // ---- Interval mode (existing behavior) ----
+  // Base first departure at the first station time "Time" (start from yesterday to catch late-night)
   const baseRef = new Date(now);
-  baseRef.setDate(baseRef.getDate() - 1); // start from yesterday to catch late-night previous departures
+  baseRef.setDate(baseRef.getDate() - 1);
   baseRef.setHours(0,0,0,0);
 
-  // Build the first departure at this station for baseRef day:
   const baseFirstAtFirstStation = makeDateFromTime(lineObj.Time, baseRef); // yesterday at Time
   const firstAtThisStation = new Date(baseFirstAtFirstStation.getTime() + offsetSeconds * 1000);
 
-  const departures = [];
-  // We'll iterate forward starting from firstAtThisStation, but ensure we start at or before 'now'
-  // If firstAtThisStation is far before now, we loop until we reach horizon.
   let cur = new Date(firstAtThisStation);
-  // advance forward until it's > horizon if needed; but we must apply dynamic intervals (depends on cur time)
-  // To ensure we include any departure shortly before 'now' that repeats with different intervals, step forward until cur > horizon
   while (cur <= horizon) {
-    // Only include departures that are >= now (upcoming)
     if (cur >= now) departures.push(new Date(cur));
-    // Determine interval applicable for the next departure based on the current departure time
     const interval = getIntervalMinutes(cur, lineObj);
-    // Move to the next departure at first station, then add station offset to get this station time.
-    // Actually intervals are between consecutive vehicles at the line's first station. When stepping cur (which is at this station),
-    // the interval between successive vehicles at this station is still the same number of minutes (assuming constant per-vehicle offset).
     cur = new Date(cur.getTime() + interval * 60 * 1000);
   }
 
@@ -411,6 +432,8 @@ const buildStationSchedules = (lines) => {
     for (let i = 0; i < stationCount; i++) {
       const stationName = lineObj.Stations[i];
       const platform = (lineObj.Platforms || [])[i] || '';
+// <-- NEUE ZEILE: falls die angezeigte Station die Endhaltestelle (Destination) ist, überspringen
+      if (stationName === lineObj.Destination) continue;
       const departures = generateDeparturesForStation(lineObj, i, 24); // next 24h
 
       if (!stationMap[stationName]) stationMap[stationName] = [];
@@ -457,6 +480,11 @@ const tableBody = document.querySelector(`#${CSS.escape(tableId)} tbody`);
 
   const stationKey = Object.keys(stationSchedules).find(k => normalize(k) === normalize(tableId));
   let departures = stationKey ? stationSchedules[stationKey] : [];
+
+  // remove departures that terminate at this station
+  if (stationKey) {
+    departures = departures.filter(d => normalize(d.destination) !== normalize(stationKey));
+  }
 
   // If no exact match, try more flexible contains match
   if (!departures || departures.length === 0) {
