@@ -15,8 +15,19 @@
             font-family: 'OohBahn';
             src: url('OohBahn.ttf') format('truetype');
         }
+        @keyframes swapColors {
+            0%   { color: var(--orig-color, #BBDD00); background: var(--orig-bg, #223311); }
+            50%  { color: var(--orig-bg, #223311); background: var(--orig-color, #BBDD00); }
+            100% { color: var(--orig-color, #BBDD00); background: var(--orig-bg, #223311); }
+        }
+        .blink {
+            animation: swapColors 2s steps(1,end) infinite;
+        }
         body {
             background-color: #000000;
+        }
+        nav {
+            text-align: right;
         }
         table {
             width: 350px;
@@ -39,8 +50,8 @@
             text-align: left;
         }
         footer {
-            color: #FFFFFF;
-            background-color: #000000;
+            color: White;
+            background-color: Black;
         }
 </style>
 </head>
@@ -49,35 +60,15 @@
 <header>
   <img src="images/logo.jpg" alt="PolRegio" class="logo">
   <nav>
-    <a href="index.html">Strona główna</a>
+<!--    <a href="index.html">Strona główna</a>
     <a href="usługi.html">Usługi</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="en/index.html">&#x1F1EA;&#x1F1FA;</a>
+    <a href="kontakt.html">Kontakt</a>-->
+    <a href="iavc-departures.html"><b><u>EN</u></b></a>
   </nav>
 </header>
 
 <main>
   <section class="contact-info">
-
-<table align="left" cellpadding="1" cellspacing="0" id="warszawska">
-    <thead>
-	<tr>
-	    <td colspan="4" bgcolor="#121212"><center><b><font color="#EEEE10" face="Arial">W&nbsp;A&nbsp;R&nbsp;S&nbsp;Z&nbsp;A&nbsp;W&nbsp;S&nbsp;K&nbsp;A</font></b></center></td>
-        </tr>
-        <tr bgcolor="#222222">
-            <th>Linia</th>
-            <th>Kierunek</th>
-            <th>Peron</th>
-            <th>Odjazd</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-    <tr bgcolor="#223311">
-        <td colspan="4"><b><font color="#BBDD00" face="Pixellari"><marquee direction="left" scrollamount="8"> + + +&nbsp;&nbsp;Wyświetlacz w trybie testowym.&nbsp;&nbsp;+ + + </marquee></font></b></td>
-    <!--<td colspan="1"><font color="DDBB00" face="OohBahn"><></font></td>-->
-    </tr>
-</table>
 
 <table align="left" cellpadding="1" cellspacing="0" id="kochłowice">
     <thead>
@@ -99,10 +90,10 @@
     </tr>
 </table>
 
-<table align="left" cellpadding="1" cellspacing="0" id="dworzecgłowny">
+<table align="left" cellpadding="1" cellspacing="0" id="warszawska">
     <thead>
 	<tr>
-	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">D&nbsp;W&nbsp;O&nbsp;R&nbsp;Z&nbsp;E&nbsp;C&nbsp;&nbsp;G&nbsp;Ł&nbsp;Ó&nbsp;W&nbsp;N&nbsp;Y</font></b></center></td>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#EEEE10" face="Arial">W&nbsp;A&nbsp;R&nbsp;S&nbsp;Z&nbsp;A&nbsp;W&nbsp;S&nbsp;K&nbsp;A</font></b></center></td>
         </tr>
         <tr bgcolor="#222222">
             <th>Linia</th>
@@ -119,10 +110,10 @@
     </tr>
 </table>
 
-<table align="left" cellpadding="1" cellspacing="0" id="ostrołekalotnisko">
+<table align="left" cellpadding="1" cellspacing="0" id="dworzecgłowny">
     <thead>
 	<tr>
-	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">L&nbsp;O&nbsp;T&nbsp;N&nbsp;I&nbsp;S&nbsp;K&nbsp;O</font></b></center></td>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">D&nbsp;W&nbsp;O&nbsp;R&nbsp;Z&nbsp;E&nbsp;C&nbsp;&nbsp;&nbsp;G&nbsp;Ł&nbsp;Ó&nbsp;W&nbsp;N&nbsp;Y</font></b></center></td>
         </tr>
         <tr bgcolor="#222222">
             <th>Linia</th>
@@ -159,10 +150,30 @@
     </tr>
 </table>
 
-<table align="left" cellpadding="1" cellspacing="0" id="slaska">
+<table align="left" cellpadding="1" cellspacing="0" id="gorkanarodowa">
     <thead>
 	<tr>
-	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">Ś&nbsp;L&nbsp;Ą&nbsp;S&nbsp;K&nbsp;A</font></b></center></td>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">G&nbsp;Ó&nbsp;R&nbsp;K&nbsp;A&nbsp;&nbsp;&nbsp;N&nbsp;A&nbsp;R&nbsp;O&nbsp;D&nbsp;O&nbsp;W&nbsp;A</font></b></center></td>
+        </tr>
+        <tr bgcolor="#222222">
+            <th>Linia</th>
+            <th>Kierunek</th>
+            <th>Peron</th>
+            <th>Odjazd</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tr bgcolor="#223311">
+        <td colspan="4"><b><font color="#BBDD00" face="Pixellari"><marquee direction="left" scrollamount="8"> + + +&nbsp;&nbsp;Wyświetlacz w trybie testowym.&nbsp;&nbsp;+ + + </marquee></font></b></td>
+    <!--<td colspan="1"><font color="DDBB00" face="OohBahn"><></font></td>-->
+    </tr>
+</table>
+
+<table align="left" cellpadding="1" cellspacing="0" id="kombinat">
+    <thead>
+	<tr>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">K&nbsp;O&nbsp;M&nbsp;B&nbsp;I&nbsp;N&nbsp;A&nbsp;T</font></b></center></td>
         </tr>
         <tr bgcolor="#222222">
             <th>Linia</th>
@@ -199,10 +210,30 @@
     </tr>
 </table>
 
-<table align="left" cellpadding="1" cellspacing="0" id="lwowekslaski">
+<table align="left" cellpadding="1" cellspacing="0" id="kozanow">
     <thead>
 	<tr>
-	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">L&nbsp;W&nbsp;Ó&nbsp;W&nbsp;E&nbsp;K&nbsp;&nbsp;&nbsp;Ś&nbsp;L&nbsp;Ą&nbsp;S&nbsp;K&nbsp;I</font></b></center></td>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">K&nbsp;O&nbsp;Z&nbsp;A&nbsp;N&nbsp;Ó&nbsp;W</font></b></center></td>
+        </tr>
+        <tr bgcolor="#222222">
+            <th>Linia</th>
+            <th>Kierunek</th>
+            <th>Peron</th>
+            <th>Odjazd</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tr bgcolor="#223311">
+        <td colspan="4"><b><font color="#BBDD00" face="Pixellari"><marquee direction="left" scrollamount="8"> + + +&nbsp;&nbsp;Wyświetlacz w trybie testowym.&nbsp;&nbsp;+ + + </marquee></font></b></td>
+    <!--<td colspan="1"><font color="DDBB00" face="OohBahn"><></font></td>-->
+    </tr>
+</table>
+
+<table align="left" cellpadding="1" cellspacing="0" id="slaska">
+    <thead>
+	<tr>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">Ś&nbsp;L&nbsp;Ą&nbsp;S&nbsp;K&nbsp;A</font></b></center></td>
         </tr>
         <tr bgcolor="#222222">
             <th>Linia</th>
@@ -239,10 +270,10 @@
     </tr>
 </table>
 
-<table align="left" cellpadding="1" cellspacing="0" id="dabrowagorniczastrzemieszyce">
+<table align="left" cellpadding="1" cellspacing="0" id="lwowekslaski">
     <thead>
 	<tr>
-	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">DĄBROWA&nbsp;&nbsp;GÓRNICZA&nbsp;&nbsp;STRZEMIESZYCE</font></b></center></td>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">L&nbsp;W&nbsp;Ó&nbsp;W&nbsp;E&nbsp;K&nbsp;&nbsp;&nbsp;Ś&nbsp;L&nbsp;Ą&nbsp;S&nbsp;K&nbsp;I</font></b></center></td>
         </tr>
         <tr bgcolor="#222222">
             <th>Linia</th>
@@ -263,6 +294,26 @@
     <thead>
 	<tr>
 	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">K&nbsp;A&nbsp;M&nbsp;I&nbsp;O&nbsp;N&nbsp;K&nbsp;A&nbsp;&nbsp;&nbsp;P&nbsp;K&nbsp;P</font></b></center></td>
+        </tr>
+        <tr bgcolor="#222222">
+            <th>Linia</th>
+            <th>Kierunek</th>
+            <th>Peron</th>
+            <th>Odjazd</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tr bgcolor="#223311">
+        <td colspan="4"><b><font color="#BBDD00" face="Pixellari"><marquee direction="left" scrollamount="8"> + + +&nbsp;&nbsp;Wyświetlacz w trybie testowym.&nbsp;&nbsp;+ + + </marquee></font></b></td>
+    <!--<td colspan="1"><font color="DDBB00" face="OohBahn"><></font></td>-->
+    </tr>
+</table>
+
+<table align="left" cellpadding="1" cellspacing="0" id="ostrołekalotnisko">
+    <thead>
+	<tr>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">L&nbsp;O&nbsp;T&nbsp;N&nbsp;I&nbsp;S&nbsp;K&nbsp;O</font></b></center></td>
         </tr>
         <tr bgcolor="#222222">
             <th>Linia</th>
@@ -303,12 +354,56 @@
   </section>
 </main>
 
+<table align="left" cellpadding="1" cellspacing="0" id="dabrowagorniczastrzemieszyce">
+    <thead>
+	<tr>
+	    <td colspan="4" bgcolor="#121212"><center><b><font color="#FFFFFF" face="Arial">DĄBROWA&nbsp;&nbsp;GÓRNICZA&nbsp;&nbsp;STRZEMIESZYCE</font></b></center></td>
+        </tr>
+        <tr bgcolor="#222222">
+            <th>Linia</th>
+            <th>Kierunek</th>
+            <th>Peron</th>
+            <th>Odjazd</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tr bgcolor="#223311">
+        <td colspan="4"><b><font color="#BBDD00" face="Pixellari"><marquee direction="left" scrollamount="8"> + + +&nbsp;&nbsp;Wyświetlacz w trybie testowym.&nbsp;&nbsp;+ + + </marquee></font></b></td>
+    <!--<td colspan="1"><font color="DDBB00" face="OohBahn"><></font></td>-->
+    </tr>
+</table>
+
 <script>
 const schedulesLines = [
   {
+    "Line":"M1",
+    "Destination":"Górka Narodowa",
+    "Stops":["Kozanów","Rzędzin","Kochłowice","Warszawska","Kombinat","Rondo Czyżyńskie","Nowosądecka","Górka Narodowa"],
+    "Platforms":["","","","","","","",""],
+    "Time":"00:00",
+    "Stationtime":["0","90","180","270","360","450","540","630"],
+    "Interv":"15",
+    "Rushhourinterv":"15",
+    "Latenightinterv":"15",
+    "Nightinterv":"30",
+  },
+  {
+    "Line":"M1",
+    "Destination":"Kozanów",
+    "Stops":["Górka Narodowa","Nowosądecka","Rondo Czyżyńskie","Kombinat","Warszawska","Kochłowice","Rzędzin","Kozanów"],
+    "Platforms":["","","","","","","",""],
+    "Time":"00:15",
+    "Stationtime":["0","90","180","270","360","450","540","630"],
+    "Interv":"15",
+    "Rushhourinterv":"15",
+    "Latenightinterv":"15",
+    "Nightinterv":"30",
+  },
+  {
     "Line":"252",
     "Destination":"Ostrołęka Lotnisko",
-    "Stations":["Dworzec Główny","Al. Jana Pawła II","Łódzka","Śląska","Ostrołęka Lotnisko"],
+    "Stops":["Dworzec Główny","Al. Jana Pawła II","Łódzka","Śląska","Ostrołęka Lotnisko"],
     "Platforms":["10","01","02","02","02"],
     "Time":"00:00",
     "Stationtime":["0","60","120","180","240"],
@@ -320,7 +415,7 @@ const schedulesLines = [
   {
     "Line":"252",
     "Destination":"Dworzec Główny",
-    "Stations":["Ostrołęka Lotnisko","Śląska","Łódzka","Al. Jana Pawła II","Dworzec Główny","Dworzec Główny"],
+    "Stops":["Ostrołęka Lotnisko","Śląska","Łódzka","Al. Jana Pawła II","Dworzec Główny","Dworzec Główny"],
     "Platforms":["02","05","01","02","04","10"],
     "Time":"00:15",
     "Stationtime":["0","60","120","180","240","300"],
@@ -332,7 +427,7 @@ const schedulesLines = [
   {
     "Line":"271",
     "Destination":"Kamionka PKP",
-    "Stations":["Biskupice Podgórne PKP","Lwówek Śląski","Radłow","Msczconów PKP","Mrożka","Warszawska","Blachownia PKP","Kochłowice","Rzędzin","Śląska","Kamionka PKP"],
+    "Stops":["Biskupice Podgórne PKP","Lwówek Śląski","Radłow","Msczconów PKP","Mrożka","Warszawska","Blachownia PKP","Kochłowice","Rzędzin","Śląska","Kamionka PKP"],
     "Platforms":["01","01","03","02","05","02","01","11","02","","02"],
     "Times":["00:15","01:00","01:45","02:30","03:15","04:00","04:45","05:30","06:15","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","22:00","22:45","23:30"],
     "Stationtime":["0","180","240","360","420","480","540","720","900","960","1080"],
@@ -340,7 +435,7 @@ const schedulesLines = [
   {
     "Line":"271",
     "Destination":"Biskupice Podgórne PKP",
-    "Stations":["Kamionka PKP","Śląska","Rzędzin","Kochłowice","Blachownia PKP","Warszawska","Mrożka","Msczconów PKP","Radłow","Lwówek Śląski","Biskupice Podgórne PKP"],
+    "Stops":["Kamionka PKP","Śląska","Rzędzin","Kochłowice","Blachownia PKP","Warszawska","Mrożka","Msczconów PKP","Radłow","Lwówek Śląski","Biskupice Podgórne PKP"],
     "Platforms":["01","01","","11","04","01","03","01","04","01","01"],
     "Times":["00:37","01:22","02:07","02:52","03:37","04:22","05:07","05:52","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","21:37","22:22","23:07","23:52"],
     "Stationtime":["0","120","180","300","480","540","600","660","840","900","1080"],
@@ -348,7 +443,7 @@ const schedulesLines = [
   {
     "Line":"272",
     "Destination":"Olkusz Dworzec PKP",
-    "Stations":["Dworzec Główny","Al. Pokoju","Złocień PKP","Łagiewniki PKP","Piekarska","Olkusz Dworzec PKP"],
+    "Stops":["Dworzec Główny","Al. Pokoju","Złocień PKP","Łagiewniki PKP","Piekarska","Olkusz Dworzec PKP"],
     "Platforms":["09","02","01","02","01",""],
     "Times":["00:15","01:15","02:15","03:15","04:15","05:15","06:15","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","22:15","23:15"],
     "Stationtime":["0","60","120","240","420","600"],
@@ -356,7 +451,7 @@ const schedulesLines = [
   {
     "Line":"272",
     "Destination":"Dworzec Główny",
-    "Stations":["Olkusz Dworzec PKP","Piekarska","Łagiewniki PKP","Złocień PKP","Al. Pokoju","Dworzec Główny"],
+    "Stops":["Olkusz Dworzec PKP","Piekarska","Łagiewniki PKP","Złocień PKP","Al. Pokoju","Dworzec Główny"],
     "Platforms":["01","02","01","02","03","09"],
     "Times":["00:45","01:45","02:45","03:45","04:45","05:45","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:45","22:45","23:45"],
     "Stationtime":["0","180","360","480","540","600"],
@@ -364,34 +459,39 @@ const schedulesLines = [
   {
     "Line":"372",
     "Destination":"Dąbrowa Górnicza Strzemieszyce",
-    "Stations":["Olkusz Dworzec PKP","Dworzec Główny","Rynek Główny","Dąbrowa Górnicza Strzemieszyce"],
-    "Platforms":["01","10","02",""],
+    "Stops":["Olkusz Dworzec PKP","Dworzec Główny","Rynek Główny","Dąbrowa Górnicza Strzemieszyce"],
+    "Platforms":["01","05","02",""],
     "Times":["00:15","01:15","02:15","03:15","04:15","05:15","06:15","06:45","07:15","07:45","08:15","08:45","09:15","09:45","10:15","10:45","11:15","11:45","12:15","12:45","13:15","13:45","14:15","14:45","15:15","15:45","16:15","16:45","17:15","17:45","18:15","18:45","19:15","19:45","20:15","20:45","21:15","22:15","23:15"],
     "Stationtime":["0","600","720","840"],
   },
   {
     "Line":"372",
     "Destination":"Olkusz Dworzec PKP",
-    "Stations":["Dąbrowa Górnicza Strzemieszyce","Rynek Główny","Dworzec Główny","Olkusz Dworzec PKP"],
-    "Platforms":["","03","05",""],
+    "Stops":["Dąbrowa Górnicza Strzemieszyce","Rynek Główny","Dworzec Główny","Olkusz Dworzec PKP"],
+    "Platforms":["","03","10",""],
     "Times":["00:45","01:45","02:45","03:45","04:45","05:45","06:30","07:00","07:30","08:00","08:30","09:00","09:30","10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00","20:30","21:00","21:45","22:45","23:45"],
     "Stationtime":["0","120","300","840"],
   }
 ];
 
-/* Interpret provided "HH:MM" as Europe/Warsaw local time (MEZ/MESZ) and return a Date in the user's local timezone */
+// Ermittelt einmal pro übergebenem referenceDate die Millisekunden-Differenz
+// zwischen lokalem Mitternacht-Timestamp und "Mitternacht in Europe/Warsaw" (kein dauerhafter Cache).
+const getWarsawMidnightOffsetMs = (referenceDate) => {
+  const y = referenceDate.getFullYear(), m = referenceDate.getMonth(), d = referenceDate.getDate();
+  const localMidnight = new Date(y, m, d, 0, 0, 0);
+  // Ein toLocaleString-Aufruf pro referenceDate ist OK (kein globaler Cache)
+  const warsawMidnightLocal = new Date(localMidnight.toLocaleString('en-US', { timeZone: 'Europe/Warsaw' }));
+  return warsawMidnightLocal.getTime() - localMidnight.getTime();
+};
+
+// Erzeugt ein Date-Objekt im lokalen TZ, das dem angegebenen Warsaw-HH:MM am referenceDate entspricht.
+// referenceDate standardmäßig heute; rufe diese Funktion nur wenige Male pro Tag/Loop auf (z.B. für -1/0/+1 Tage).
 const makeDateFromTime = (timeStr, referenceDate = new Date()) => {
-  const [h, m] = timeStr.split(':').map(Number);
-  // build a wall-clock Date for the reference day with the given hour/minute,
-  // then convert that Warsaw wall time into a local Date by using toLocaleString with timeZone.
-  const year = referenceDate.getFullYear();
-  const month = referenceDate.getMonth(); // 0-based
-  const day = referenceDate.getDate();
-  const warsawWall = new Date(year, month, day, h, m, 0);
-  // toLocaleString(..., { timeZone: 'Europe/Warsaw' }) returns a string representing warsawWall in Warsaw time,
-  // creating a Date from that string yields a Date object in the local timezone that represents the same absolute instant.
-  const warsawLocalString = warsawWall.toLocaleString('en-US', { timeZone: 'Europe/Warsaw' });
-  return new Date(warsawLocalString);
+  const [h, min] = timeStr.split(':').map(Number);
+  const offsetMs = getWarsawMidnightOffsetMs(referenceDate); // nur ein toLocaleString pro referenceDate
+  const localMidnight = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate(), 0, 0, 0).getTime();
+  const warsawTimestamp = localMidnight + offsetMs + (h * 60 + min) * 60000;
+  return new Date(warsawTimestamp);
 };
 
 /* Determine which interval (minutes) applies at a given Date for a line object */
@@ -448,12 +548,10 @@ const generateDeparturesForStation = (lineObj, stationIndex, horizonHours = 24) 
   baseRef.setDate(baseRef.getDate() - 1);
   baseRef.setHours(0,0,0,0);
 
-  const baseFirstAtFirstStation = makeDateFromTime(lineObj.Time, baseRef); // yesterday at Time
-  const firstAtThisStation = new Date(baseFirstAtFirstStation.getTime() + offsetSeconds * 1000);
-
-  let cur = new Date(firstAtThisStation);
+  const baseFirstAtFirstStation = makeDateFromTime(lineObj.Time, baseRef); // Date
+  let cur = new Date(baseFirstAtFirstStation.getTime() + offsetSeconds * 1000);
   while (cur <= horizon) {
-    if (cur >= now) departures.push(new Date(cur));
+    if (cur >= now) departures.push(cur); // push existing Date instance (not new Date(cur))
     const interval = getIntervalMinutes(cur, lineObj);
     cur = new Date(cur.getTime() + interval * 60 * 1000);
   }
@@ -468,9 +566,9 @@ const buildStationSchedules = (lines) => {
   const now = new Date();
 
   lines.forEach(lineObj => {
-    const stationCount = (lineObj.Stations || []).length;
+    const stationCount = (lineObj.Stops || []).length;
     for (let i = 0; i < stationCount; i++) {
-      const stationName = lineObj.Stations[i];
+      const stationName = lineObj.Stops[i];
       const platform = (lineObj.Platforms || [])[i] || '';
 // <-- NEUE ZEILE: falls die angezeigte Station die Endhaltestelle (Destination) ist, überspringen
       if (stationName === lineObj.Destination) continue;
@@ -499,7 +597,7 @@ const buildStationSchedules = (lines) => {
 
 /* Format helpers */
 const formatTime = (date) => `${String(date.getHours()).padStart(2,'0')}:${String(date.getMinutes()).padStart(2,'0')}`;
-const minutesUntil = (date) => Math.round((date - new Date()) / (1000 * 60));
+const minutesUntil = (date, nowTs = Date.now()) => Math.round((date.getTime() - nowTs) / 60000);
 
 /* Main update function: given a tableId (which should correspond to a station key) and the new line-based schedules,
    populate the table with the next 7 departures (line, destination, platform/time like before). */
@@ -508,7 +606,7 @@ const tableBody = document.querySelector(`#${CSS.escape(tableId)} tbody`);
   if (!tableBody) return;
 
   tableBody.innerHTML = '';
-
+  tableBody.innerHTML = Array.from({length:7}, ()=> '<tr><td colspan="4">&nbsp;</td></tr>').join('');
   const stationSchedules = buildStationSchedules(lines);
   // tableId may be e.g. 'borislavka' while station names in data might be "Borislavka" or different casing.
   // We'll try matching case-insensitively and with basic normalization (lowercase, remove spaces/diacritics optional).
@@ -539,25 +637,30 @@ const tableBody = document.querySelector(`#${CSS.escape(tableId)} tbody`);
     return;
   }
 
+  tableBody.innerHTML = '';
+  const frag = document.createDocumentFragment();
+  const nowTs = Date.now();
   const upcoming = departures.slice(0, 7);
 
   upcoming.forEach(({ line, destination, platform, departureTime }) => {
     const row = document.createElement('tr');
-    const mins = minutesUntil(departureTime);
+    const mins = minutesUntil(departureTime, nowTs);
     const displayTime = mins >= 0 && mins < 60 ? `&nbsp;&nbsp;&nbsp;${mins}\'&nbsp;` : formatTime(departureTime);
+    if (mins === 0) row.classList.add('blink');
     // Keep same column order but added platform column (adjust as you like)
     // place this directly before the existing row.innerHTML = ... line
     const displayDestination = (['271','272','372'].includes(line))
       ? `ZKA&nbsp;${destination === 'Dąbrowa Górnicza Strzemieszyce' ? 'Dąbrowa Górnicza Strz.' : destination}`
       : destination;
     row.innerHTML = `<td>${line}</td><td>${displayDestination}</td><td>${platform || ''}</td><td>${displayTime}</td>`;
-    tableBody.appendChild(row);
+    frag.appendChild(row);
   });
+  tableBody.appendChild(frag);
 };
 
 /* Convenience wrapper to refresh multiple known table IDs */
 const refreshTablesFromLines = (lines) => {
-  const tableIds = ['biskupicepodgornepkp','dabrowagorniczastrzemieszyce','dworzecgłowny','kamionkapkp','kochłowice','lwowekslaski','olkuszdworzecpkp','ostrołekalotnisko','rynekgłowny','rzedzin','slaska','warszawska'];
+  const tableIds = ['biskupicepodgornepkp','dabrowagorniczastrzemieszyce','dworzecgłowny','gorkanarodowa','kamionkapkp','kochłowice','kombinat','kozanow','lwowekslaski','olkuszdworzecpkp','ostrołekalotnisko','rynekgłowny','rzedzin','slaska','warszawska'];
   tableIds.forEach(id => updateTableFromLines(id, lines));
 };
 
@@ -573,7 +676,7 @@ window.refreshTablesFromLines = refreshTablesFromLines;
 </script>
 
 <footer>
-  <p><b>&copy;&nbsp;2026,&nbsp;PolRegio&nbsp;Ostrołęka</b>,&nbsp;s.c.&nbsp;|&nbsp;Projekt&nbsp;Roblox</p>
+  <p><b>&copy;&nbsp;2026,&nbsp;PolRegio&nbsp;Ostrołęka</b>,&nbsp;s.c.&nbsp;<b>/&nbsp;IAvC</b></p>
 </footer>
 
 </body>
