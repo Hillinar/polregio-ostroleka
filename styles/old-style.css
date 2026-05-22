@@ -1,7 +1,7 @@
 /* Strana Główna */
 body {
   font-family: "Arial", sans-serif;
-  background-color: #f8f8f8;
+  background-color: #9fa1ac;
   color: black;
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body {
 header {
 <!--background: linear-gradient(90deg, #ff4d00, #ff8800);-->
   color: white;
-  background-color: #f8f8f8;
+  background-color: #9fa1ac;
   text-align: center;
 }
 
@@ -20,7 +20,7 @@ img.logo {
 }
 
 nav {
-  background-color: #ffaf00;
+  background-color: #c4281c;
   text-align: center;
   padding: 10px;
 }
@@ -41,7 +41,7 @@ nav a:hover {
 }
 
 .hero {
-  background-color: #f8f8f8;
+  background-color: #9fa1ac;
   text-align: center;
   padding: 40px 20px;
 }
@@ -53,7 +53,7 @@ nav a:hover {
 }
 
 footer {
-  background-color: #ff0000;
+  background-color: #c4281c;
   text-align: center;
   padding: 10px;
   font-size: 0.9em;
