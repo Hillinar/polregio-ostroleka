@@ -8,9 +8,8 @@ body {
 }
 
 header {
-<!--background: linear-gradient(90deg, #ff4d00, #ff8800);-->
   color: white;
-  background-color: #9fa1ac;
+  background-color: #blacj;
   text-align: center;
 }
 
@@ -33,7 +32,7 @@ nav a {
 }
 
 nav a.active {
-    color: #ff8800;
+    color: #ff5500;
 }
 
 nav a:hover {
